@@ -41,7 +41,7 @@ def verify_receipt(receipt_id: str) -> str:
 
 
 def main() -> int:
-    tag = os.environ.get("HIVE_TAG")
+    tag = os.environ.get("HIVE_TAG", "bounty_5485ec35")
     if not tag:
         print("Set HIVE_TAG to the bounty referrer code before running.", file=sys.stderr)
         return 1
@@ -51,9 +51,12 @@ def main() -> int:
 
     try:
         crew_result = build_demo_crew(tag).kickoff()
-        print("\nCrewAI result:\n", crew_result)
+        print("
+CrewAI result:
+", crew_result)
     except Exception as exc:
-        print(f"\nCrewAI run skipped or failed: {exc}")
+        print(f"
+CrewAI run skipped or failed: {exc}")
 
     receipt_id = mint_receipt(
         {
@@ -74,7 +77,8 @@ def main() -> int:
         return 2
 
     verify_url = verify_receipt(receipt_id)
-    print("\nMinted receipt_id:", receipt_id)
+    print("
+Minted receipt_id:", receipt_id)
     print("Verify URL:", verify_url)
     return 0
 
