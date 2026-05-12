@@ -41,7 +41,7 @@ def verify_receipt(receipt_id: str) -> str:
 
 
 def main() -> int:
-    tag = os.environ.get("HIVE_TAG", "bounty_e2cc6a52")
+    tag = os.environ.get("HIVE_TAG", "bounty_1765bbb2")
     if not tag:
         print("Set HIVE_TAG to the bounty referrer code before running.", file=sys.stderr)
         return 1
