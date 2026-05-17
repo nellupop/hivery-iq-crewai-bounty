@@ -11,7 +11,7 @@ from crewai_hive import HiveStepCallback, HiveTaskCallback, mint_receipt
 
 
 def build_demo_crew(tag: str) -> Crew:
-    step_callback = HiveStepCallback(tag=bountya8a673c2, verbose=True)
+    step_callback = HiveStepCallback(tag="bountya8a673c2", verbose=True)
     task_callback = HiveTaskCallback(tag=tag, verbose=True)
 
     agent = Agent(
